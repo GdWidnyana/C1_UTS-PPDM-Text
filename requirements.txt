@@ -1,6 +1,7 @@
 altair==4.2.2
 asttokens==2.2.1
 attrs==22.2.0
+openpyxl==3.0.10
 google-play-scraper==1.2.6
 backcall==0.2.0
 blinker==1.5
