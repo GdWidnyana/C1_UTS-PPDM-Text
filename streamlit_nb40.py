@@ -210,12 +210,12 @@ def main():
                 st.write("Total data scraping:", len(df_data))
                 st.write(df_data)
             
-                # Tombol untuk mendownload hasil scraping dalam bentuk file Excel
-                if st.button("Download Hasil Scraping"):
-                excel_buffer = BytesIO()
-                df_data.to_excel(excel_buffer, index=False)
-                excel_buffer.seek(0)
-                st.download_button(label="Klik untuk Download", data=excel_buffer, file_name="hasil_scraping_ulasan.xlsx", mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+                    # Tombol untuk mendownload hasil scraping dalam bentuk file Excel
+                    if st.button("Download Hasil Scraping"):
+                    excel_buffer = BytesIO()
+                    df_data.to_excel(excel_buffer, index=False)
+                    excel_buffer.seek(0)
+                    st.download_button(label="Klik untuk Download", data=excel_buffer, file_name="hasil_scraping_ulasan.xlsx", mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
             else:
                 st.warning("Masukkan ID Aplikasi Google Play Store terlebih dahulu.")
         
