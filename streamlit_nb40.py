@@ -179,18 +179,39 @@ def main():
         #     else:
         #         st.warning("Masukkan ID Aplikasi Google Play Store terlebih dahulu.")
         
+        # if st.button("Mulai Scraping"):
+        #     if app_id:
+        #         st.write("Sedang melakukan scraping ulasan...")
+        #         result = scrape_reviews(app_id, count)
+        #         df_data = pd.DataFrame(result)
+        #         df_data.rename(columns={'content': 'Ulasan'}, inplace=True)  # Mengubah nama kolom
+        #         df_data = df_data[['Ulasan']]  # Menampilkan kolom 'Ulasan' saja
+        #         st.write("Total data scraping:", len(df_data))
+        #         st.write(df_data)
+        #         # display_and_download_data(df_data)
+        #         # Tombol untuk mendownload hasil scraping dalam bentuk file Excel
+        #         st.button("Download Hasil Scraping")
+        #         excel_buffer = BytesIO()
+        #         df_data.to_excel(excel_buffer, index=False)
+        #         excel_buffer.seek(0)
+        #         st.download_button(label="Klik untuk Download", data=excel_buffer, file_name="hasil_scraping_ulasan.xlsx", mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+        #     else:
+        #         st.warning("Masukkan ID Aplikasi Google Play Store terlebih dahulu.")
         if st.button("Mulai Scraping"):
             if app_id:
                 st.write("Sedang melakukan scraping ulasan...")
                 result = scrape_reviews(app_id, count)
                 df_data = pd.DataFrame(result)
-                df_data.rename(columns={'content': 'Ulasan'}, inplace=True)  # Mengubah nama kolom
-                df_data = df_data[['Ulasan']]  # Menampilkan kolom 'Ulasan' saja
+            
+            # Memilih kolom 'content' dan mengubah namanya menjadi 'Ulasan'
+                df_data = df_data[['content']]
+                df_data.rename(columns={'content': 'Ulasan'}, inplace=True)
+            
                 st.write("Total data scraping:", len(df_data))
                 st.write(df_data)
-                # display_and_download_data(df_data)
+            
                 # Tombol untuk mendownload hasil scraping dalam bentuk file Excel
-                st.button("Download Hasil Scraping")
+                if st.button("Download Hasil Scraping"):
                 excel_buffer = BytesIO()
                 df_data.to_excel(excel_buffer, index=False)
                 excel_buffer.seek(0)
