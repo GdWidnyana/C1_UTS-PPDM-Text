@@ -210,8 +210,8 @@ def main():
                 st.write("Total data scraping:", len(df_data))
                 st.write(df_data)
             
-                    # Tombol untuk mendownload hasil scraping dalam bentuk file Excel
-                    if st.button("Download Hasil Scraping"):
+                # Tombol untuk mendownload hasil scraping dalam bentuk file Excel
+                if st.button("Download Hasil Scraping"):
                     excel_buffer = BytesIO()
                     df_data.to_excel(excel_buffer, index=False)
                     excel_buffer.seek(0)
