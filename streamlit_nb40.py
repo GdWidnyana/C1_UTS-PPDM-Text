@@ -204,8 +204,9 @@ def main():
                 df_data = pd.DataFrame(result)
             
             # Memilih kolom 'content' dan mengubah namanya menjadi 'Ulasan'
-                df_data = df_data[['content']]
+                # df_data = df_data[['content']]
                 df_data.rename(columns={'content': 'Ulasan'}, inplace=True)
+                df_data = df_data[['Ulasan']]
             
                 st.write("Total data scraping:", len(df_data))
                 st.write(df_data)
