@@ -13,6 +13,7 @@ import re
 from google_play_scraper import Sort, reviews
 from google_play_scraper import app
 from collections import Counter
+import openpyxl
 
 def scrape_reviews(app_id, count):
     result, _ = reviews(
@@ -25,14 +26,14 @@ def scrape_reviews(app_id, count):
     )
     return result
 
-best_model = load('C:/Users/Widnyana/Documents/SMT 4 WALAWE/TUGAS KLP/PPDM/UTS_C1_PPDM/models/model_data split/best_model.pkl')
+best_model = load('best_model.pkl')
 
 # Memuat TfidfVectorizer yang sama yang digunakan saat melatih model
-with open('C:/Users/Widnyana/Documents/SMT 4 WALAWE/TUGAS KLP/PPDM/UTS_C1_PPDM/models/model_data split/tfidf_vectorizer.pkl', 'rb') as file:
+with open('tfidf_vectorizer.pkl', 'rb') as file:
     tfidf_vectorizer = pickle.load(file)
 
 # Memuat selector yang sama yang digunakan saat melatih model
-with open('C:/Users/Widnyana/Documents/SMT 4 WALAWE/TUGAS KLP/PPDM/UTS_C1_PPDM/models/model_data split/selector.pkl', 'rb') as file:
+with open('selector.pkl', 'rb') as file:
     selector = pickle.load(file)
 
 # Memuat objek lain yang dibutuhkan untuk preprocessing
@@ -40,8 +41,22 @@ stemmer = StemmerFactory().create_stemmer()
 stop_words = set(nltk.corpus.stopwords.words('indonesian'))
 
 # Fungsi untuk preprocessing teks
+# def preprocess_text(text):
+#     tokens = word_tokenize(text)
+#     filtered_tokens = [word for word in tokens if word.lower() not in stop_words]
+    
+#     # Menghapus karakter berulang
+#     cleaned_tokens = []
+#     for token in filtered_tokens:
+#         cleaned_token = re.sub(r'(.)\1+', r'\1', token)
+#         cleaned_tokens.append(cleaned_token)
+    
+#     stemmed_tokens = [stemmer.stem(word) for word in cleaned_tokens]
+#     processed_text = ' '.join(stemmed_tokens)
+#     return processed_text
+
 def preprocess_text(text):
-    tokens = word_tokenize(text)
+    tokens = text.split()  # Tokenisasi dengan split berdasarkan spasi
     filtered_tokens = [word for word in tokens if word.lower() not in stop_words]
     
     # Menghapus karakter berulang
