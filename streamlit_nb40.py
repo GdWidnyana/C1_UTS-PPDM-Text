@@ -14,6 +14,7 @@ from google_play_scraper import Sort, reviews
 from google_play_scraper import app
 from collections import Counter
 import openpyxl
+from io import BytesIO
 
 def scrape_reviews(app_id, count):
     result, _ = reviews(
@@ -141,8 +142,6 @@ def show_bar_chart(word_freq, title):
     plt.gca().invert_yaxis()
     st.pyplot(fig)
 
-from io import BytesIO
-
 # Menggunakan Streamlit untuk membuat antarmuka pengguna
 def main():
     st.set_page_config(page_title="Sistem analisis sentimen ulasan")  # layout="wide" Menambahkan judul halaman dan layout wide
@@ -165,7 +164,7 @@ def main():
                 st.write("Sedang melakukan scraping ulasan...")
                 result = scrape_reviews(app_id, count)
                 df_data = pd.DataFrame(result)
-                df_data.rename(columns={'content':'Ulasan'}, inplace=True)  # Mengubah nama kolom
+                df_data.rename(columns={'content': 'Ulasan'}, inplace=True)  # Mengubah nama kolom
                 df_data = df_data[['Ulasan']]  # Menampilkan kolom 'Ulasan' saja
                 st.write("Total data scraping:", len(df_data))
                 st.write(df_data)
