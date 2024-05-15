@@ -38,7 +38,27 @@ with open('selector.pkl', 'rb') as file:
 
 # Memuat objek lain yang dibutuhkan untuk preprocessing
 stemmer = StemmerFactory().create_stemmer()
-stop_words = set(nltk.corpus.stopwords.words('indonesian'))
+
+# Membaca daftar stopwords dari file Stopwords.txt
+stop_words_file = 'Stopwords.txt'
+with open(stop_words_file, 'r', encoding='utf-8') as file:
+    stop_words = set([word.strip() for word in file.readlines() if word.strip()])
+
+# Fungsi untuk preprocessing teks
+def preprocess_text(text):
+    tokens = text.split()  # Tokenisasi dengan split berdasarkan spasi
+    filtered_tokens = [word for word in tokens if word.lower() not in stop_words]
+    
+    # Menghapus karakter berulang
+    cleaned_tokens = []
+    for token in filtered_tokens:
+        cleaned_token = re.sub(r'(.)\1+', r'\1', token)
+        cleaned_tokens.append(cleaned_token)
+    
+    stemmed_tokens = [stemmer.stem(word) for word in cleaned_tokens]
+    processed_text = ' '.join(stemmed_tokens)
+    return processed_text
+
 
 # Fungsi untuk preprocessing teks
 # def preprocess_text(text):
@@ -55,19 +75,7 @@ stop_words = set(nltk.corpus.stopwords.words('indonesian'))
 #     processed_text = ' '.join(stemmed_tokens)
 #     return processed_text
 
-def preprocess_text(text):
-    tokens = text.split()  # Tokenisasi dengan split berdasarkan spasi
-    filtered_tokens = [word for word in tokens if word.lower() not in stop_words]
-    
-    # Menghapus karakter berulang
-    cleaned_tokens = []
-    for token in filtered_tokens:
-        cleaned_token = re.sub(r'(.)\1+', r'\1', token)
-        cleaned_tokens.append(cleaned_token)
-    
-    stemmed_tokens = [stemmer.stem(word) for word in cleaned_tokens]
-    processed_text = ' '.join(stemmed_tokens)
-    return processed_text
+
 
 # Fungsi untuk prediksi sentimen dan mengembalikan prediksi serta probabilitasnya (TFIDF)
 def predict_sentiment_with_prob(text):
