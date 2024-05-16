@@ -243,7 +243,7 @@ def main():
 
     elif option == "Upload File Excel":
         # Konten untuk upload file Excel
-        uploaded_file = st.file_uploader("Unggah file Excel", type=["xls", "csv", "xlsx"])
+        uploaded_file = st.file_uploader("Unggah file Excel", type=["xlsx"])
         
         if uploaded_file is not None:
             # Memproses file yang diunggah dan menampilkan hasilnya
