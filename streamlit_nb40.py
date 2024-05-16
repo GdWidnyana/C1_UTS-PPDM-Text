@@ -129,17 +129,23 @@ def show_pie_chart(df):
     ax.set_title('Persentase Sentimen')
     st.pyplot(fig)
 
-# Fungsi untuk menampilkan diagram batang frekuensi kata
 def show_bar_chart(word_freq, title):
     common_words = word_freq.most_common(10)
     words = [word for word, freq in common_words]
     frequencies = [freq for word, freq in common_words]
     
     fig, ax = plt.subplots()
-    ax.barh(words, frequencies, color='skyblue')
+    bars = ax.barh(words, frequencies, color='skyblue')
     ax.set_xlabel('Frekuensi')
     ax.set_title(title)
     plt.gca().invert_yaxis()
+    
+    # Adding numeric values to the bars
+    for bar in bars:
+        width = bar.get_width()
+        label_x_pos = width + max(frequencies) * 0.02
+        ax.text(label_x_pos, bar.get_y() + bar.get_height()/2, f'{width}', va='center')
+    
     st.pyplot(fig)
 
 # Menggunakan Streamlit untuk membuat antarmuka pengguna
