@@ -170,8 +170,8 @@ def main():
                 st.write("Sedang melakukan scraping ulasan...")
                 result = scrape_reviews(app_id, count)
                 df_data = pd.DataFrame(result)
-                df_data.rename(columns={'content': 'Ulasan1'}, inplace=True)  # Mengubah nama kolom
-                df_data = df_data[['Ulasan1']]  # Menampilkan kolom 'Ulasan' saja
+                df_data.rename(columns={'content': 'Ulasan'}, inplace=True)  # Mengubah nama kolom
+                df_data = df_data[['Ulasan']]  # Menampilkan kolom 'Ulasan' saja
                 st.write("Total data scraping:", len(df_data))
                 st.write(df_data)
                 # display_and_download_data(df_data)
