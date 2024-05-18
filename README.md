@@ -19,7 +19,6 @@ Anggota kelompok:
 4.	Bayu Yudistira Ramadhan			          (2208561085)
    
 Kelas : C
-
 ==============================================================
 
 Pengampu Mata Kuliah:
