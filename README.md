@@ -20,7 +20,11 @@ Anggota kelompok:
    
 Kelas : C
 
+==============================================================
+
 Pengampu Mata Kuliah:
-Dr. AAIN Eka Karyawati, S.Si., M.Eng. https://udayananetworking.unud.ac.id/lecturer/2372-anak-agung-istri-ngurah-eka-karyawati
+Dr. AAIN Eka Karyawati, S.Si., M.Eng. 
+
+https://udayananetworking.unud.ac.id/lecturer/2372-anak-agung-istri-ngurah-eka-karyawati
 
 Supporting by Lab Ergonomic Computing PS Informatika FMIPA Unud https://if.unud.ac.id/
