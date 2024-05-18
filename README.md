@@ -18,6 +18,7 @@ Anggota kelompok:
 3.	I Gede Widiantara Mega Saputra		    (2208561022)
 4.	Bayu Yudistira Ramadhan			          (2208561085)
 Kelas : C
+==============================================================
 Pengampu Mata Kuliah:
 Dr. AAIN Eka Karyawati, S.Si., M.Eng. https://udayananetworking.unud.ac.id/lecturer/2372-anak-agung-istri-ngurah-eka-karyawati
 
