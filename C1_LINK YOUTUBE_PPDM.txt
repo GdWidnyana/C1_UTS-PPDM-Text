@@ -1,0 +1,12 @@
+Analisis Sentimen Ulasan Aplikasi SATUSEHAT Mobile Menggunakan Metode Algoritma Naïve Bayes Classifier dan Seleksi Fitur Chi-Square
+
+Disusun oleh :
+Kelompok I
+Kelas C
+
+1.	Ida Bagus Putu Ryan Paramasatya Putra	(2208561010)
+2.	I Gede Widnyana					(2208561016)
+3.	I Gede Widiantara Mega Saputra		(2208561022)
+4.	Bayu Yudistira Ramadhan			(2208561085)
+
+•	Berikut ini penulis sajikan link youtube video demo project https://youtu.be/A_8F9c4AZ_A
