@@ -27,3 +27,6 @@ Dr. AAIN Eka Karyawati, S.Si., M.Eng.
 https://udayananetworking.unud.ac.id/lecturer/2372-anak-agung-istri-ngurah-eka-karyawati
 
 Supporting by Lab Ergonomic Computing PS Informatika FMIPA Unud https://if.unud.ac.id/
+
+![image](https://github.com/GdWidnyana/C1_UTS-PPDM-Text/assets/120539660/6bbe3cb0-3247-4dd7-841b-297832eedc80)
+
