@@ -1,9 +1,15 @@
 Penyelesaian Kasus 1 – [Analisis Sentimen Ulasan Aplikasi SATUSEHAT Mobile Menggunakan Algoritma Multinomial Naïve Bayes Classifier dan Seleksi Fitur Chi-Square”] 
+
 Mata Kuliah		: Pengantar Pemrosesan Data Multimedia
+
 Program Studi	: Informatika 
+
 Fakultas		  : FMIPA 
+
 Universitas		: Universitas Udayana 
+
 Tahun Ajaran	: 2023/2024
+
 ==============================================================
 
 Deskripsi Tugas:
@@ -13,6 +19,7 @@ Project ini merupakan implementasi dari kecerdasan buatan salah satunya adalah n
 Link Demo Sistem : https://c1-uts-ppdm-sentimen-ulasan.streamlit.app/
 
 Anggota kelompok:
+
 1.	Ida Bagus Putu Ryan Paramasatya Putra	(2208561010)
 2.	I Gede Widnyana					              (2208561016)
 3.	I Gede Widiantara Mega Saputra		    (2208561022)
@@ -28,5 +35,7 @@ https://udayananetworking.unud.ac.id/lecturer/2372-anak-agung-istri-ngurah-eka-k
 
 Supporting by Lab Ergonomic Computing PS Informatika FMIPA Unud https://if.unud.ac.id/
 
-![image](https://github.com/GdWidnyana/C1_UTS-PPDM-Text/assets/120539660/6bbe3cb0-3247-4dd7-841b-297832eedc80)
+Interface sistem : ![image](https://github.com/user-attachments/assets/a59a27d0-959d-4795-b607-810b099a0a27)
+
+
 
